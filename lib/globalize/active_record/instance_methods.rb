@@ -80,7 +80,7 @@ module Globalize
 
       def translated_attributes
         translated_attribute_names.inject({}) do |attributes, name|
-          attributes.merge(name.to_s => translation.send(name))
+          attributes.merge(name.to_s => translation.send(name)) rescue {}
         end
       end
 
